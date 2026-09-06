@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: sqlite:////data/search_intel.db
+    volumes:
+      - search-intel-data:/data
+
+volumes:
+  search-intel-data:
